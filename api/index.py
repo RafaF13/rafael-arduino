@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-import db
+from . import db
 from flask_cors import CORS
 
 app = Flask(__name__)
