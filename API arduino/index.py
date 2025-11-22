@@ -7,7 +7,7 @@ CORS(app)
 
 @app.route('/')
 def home():
-    return 'Hello, World!'
+    return 'Autor: Rafael Ferreira'
 
 @app.route('/insert_data', methods = ['POST'])
 def insert_data_endpoint():
