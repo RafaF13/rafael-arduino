@@ -13,7 +13,7 @@ def get_data_field(field, limit):
             with conn.cursor() as cur:
                 # Ordenar do mais antigo para o mais e recente e obter as primeiras 10 linhas
                 # e dps voltar a ordenar do mais antigo para o mais recent
-                cur.execute("SELECT * FROM (SELECT * FROM arduino_data WHERE field = %s ORDER BY date_time DESC LIMIT %s) ORDER BY date_time ASC", [field, limit])
+                cur.execute("SELECT * FROM (SELECT * FROM arduino_data WHERE field = %s ORDER BY date_time DESC LIMIT %s) AS dados_desc ORDER BY date_time ASC", [field, limit])
                 for tuple in cur.fetchall():
                     reg = {
                         "id": tuple[0],
